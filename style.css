@@ -1,0 +1,355 @@
+:root {
+    --primary-color: #98E2CB;
+    --text-color: #333;
+    --background-color: #fff;
+    --section-spacing: 1.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Left Column Styles */
+.left-column {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.profile-section {
+    margin-bottom: var(--section-spacing);
+    position: relative;
+}
+
+.profile-image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    z-index: 1;
+    background: #f0f0f0;
+}
+
+.profile-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transform: translate(10px, 10px);
+    z-index: 0;
+}
+
+.profile-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    z-index: 2;
+    display: block;
+    background: #fff;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: var(--section-spacing);
+}
+
+h3 {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Contact Info Styles */
+.contact-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Language Styles */
+.language-item {
+    margin-bottom: 1rem;
+}
+
+.level {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.skill-dots {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
+.dot.filled {
+    background-color: var(--primary-color);
+}
+
+/* Skills Styles */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background-color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #333;
+}
+
+/* Right Column Styles */
+.right-column {
+    padding: 1.5rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-tag {
+    display: inline-block;
+    background-color: var(--primary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Experience Styles */
+.experience-item, .education-item, .project-item {
+    margin-bottom: 1.5rem;
+}
+
+.experience-header, .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.position {
+    font-weight: 500;
+    color: #444;
+}
+
+.company-desc {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+li {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Project Styles */
+.project-item h4 {
+    color: #444;
+    margin-bottom: 0.3rem;
+}
+
+.project-item p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.project-item a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+
+    .left-column {
+        order: 2;
+    }
+
+    .right-column {
+        order: 1;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .title-tag {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .experience-header, .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}
+
+@media (max-width: 410px) {
+    .container {
+        padding: 0.3rem;
+    }
+
+    .left-column, .right-column {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .skills-container {
+        gap: 0.3rem;
+    }
+
+    .skill-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .section {
+        margin-bottom: 1.2rem;
+    }
+
+    .contact-info p {
+        font-size: 0.85rem;
+    }
+
+    .summary-text {
+        font-size: 0.9rem;
+    }
+
+    li {
+        font-size: 0.85rem;
+    }
+
+    .project-item {
+        margin-bottom: 1rem;
+    }
+
+    .project-item a {
+        font-size: 0.85rem;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        padding: 0.2rem;
+    }
+
+    .left-column, .right-column {
+        padding: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .profile-image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .section {
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    .skill-tag {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .contact-info p {
+        font-size: 0.8rem;
+    }
+
+    .summary-text {
+        font-size: 0.85rem;
+    }
+
+    li {
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .project-item h4 {
+        font-size: 0.9rem;
+    }
+
+    .project-item p, .project-item a {
+        font-size: 0.8rem;
+    }
+
+    .title-tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
